@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-box</title>
+    <style>
+        html {
+            background: #111;
+        }
+
+        /* 第一个：普通flex */
+        .container1 {
+            /* 将块级元素水平布局，在一行内显示 */
+            border: 2px solid #966;
+        }
+
+        /* 通用样式 */
+        .container {
+            display: flex;
+        }
+
+        .a,
+        .b,
+        .c {
+            /* 文本水平居中 */
+            text-align: center;
+            padding: 1em;
+        }
+
+        .a {
+            background: #fcc;
+        }
+
+        .b {
+            background: #cfc;
+        }
+
+        .c {
+            background: #ccf;
+        }
+
+        /* 第二个：flex-grow */
+
+        .container2 {
+            border: 2px solid #c66;
+            height: 100px;
+        }
+
+        .a2,
+        .b2,
+        .c2 {
+            width: 100px;
+            text-align: center;
+            padding: 1em;
+        }
+
+        /* flex-grow都只指定content部分 */
+        .a2 {
+            flex-grow: 2;
+        }
+
+        .b2 {
+            flex-grow: 1;
+        }
+
+        /* 第三个：flex-shrink */
+        .container3 {
+            border: 2px solid #c66;
+            height: 100px;
+        }
+
+        .a3,
+        .b3,
+        .c3 {
+            width: 400px;
+            text-align: center;
+            padding: 1em;
+        }
+
+        /* 只有a3的width符合400px，b3和c3都有缩水 */
+        .a3 {
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container container1">
+        <div class="a a1">A</div>
+        <div class="b b1">B</div>
+        <div class="c c1">C</div>
+    </div>
+
+    <div class="container container2">
+        <div class="a a2">A</div>
+        <div class="b b2">B</div>
+        <div class="c c2">C</div>
+    </div>
+
+    <div class="container container3">
+        <div class="a a3">A</div>
+        <div class="b b3">B</div>
+        <div class="c c3">C</div>
+    </div>
+
+</body>
+
+</html>

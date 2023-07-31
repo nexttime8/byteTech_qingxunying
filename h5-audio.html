@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="playButton">play</button>
+    <!-- 差点聋掉 -->
+    <script>
+        document.getElementById('playButton').addEventListener('click', function () {
+            const audioCtx = new (window.AudioContext || window.webkitAudioContext)
+            const osci = audioCtx.createOscillator()
+            const gain = audioCtx.createGain()
+            osci.connect(gain)
+            gain.connect(audioCtx.destination)
+            osci.start()
+        })
+    </script>
+</body>
+
+</html>

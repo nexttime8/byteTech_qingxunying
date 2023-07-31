@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            background: #111;
+            color: #fff;
+        }
+
+        div {
+            font-size: 20px;
+            margin-bottom: 20px;
+            width: 10em;
+            /* overflow-wrap: break-word; */
+            background: #411;
+        }
+
+        em {
+            display: inline-block;
+            width: 3em;
+            background: #33c;
+        }
+
+        /* 属性id的值可以是短横线相连的单词组合 */
+        #break-word {
+            overflow-wrap: break-word;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        This is a paragraph of text with long word Honorificabilitudinitatibus. Here is an image
+        <img src="https://assets.codepen.io/59477/cat.png" alt="cat">
+        And <em>Inline Block</em>
+    </div>
+
+    <div id="break-word">
+        This is a paragraph of text with long word Honorificabilitudinitatibus. Here is an image
+        <img src="https://assets.codepen.io/59477/cat.png" alt="cat">
+        And <em>Inline Block</em>
+    </div>
+
+</body>
+
+</html>

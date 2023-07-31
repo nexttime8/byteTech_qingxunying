@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            display: inline-block;
+            /* 行级元素无法设置宽高 */
+            width: 20px;
+            height: 20px;
+            background-color: #a988b6;
+        }
+
+        /* 存在margin collapse */
+        #span1 {
+            margin-right: 10px;
+        }
+
+        #span2 {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span id="span1"></span>
+        <span id="span2"></span>
+    </div>
+</body>
+
+</html>
