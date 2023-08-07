@@ -1,1 +1,8 @@
-"image*"
+# 忽略所有png文件
+*.png
+
+# 忽略所有images文件夹
+images*
+
+# 排除gitignore文件本身
+!/.gitignore
