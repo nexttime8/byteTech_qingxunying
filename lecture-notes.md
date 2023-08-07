@@ -200,3 +200,122 @@
 9. 块级元素和行级元素![行级元素width和height不适用](images2/image-38.png)![有哪些块级元素&有哪些行级元素](images2/image-39.png)
 10. display 属性![有哪些取值](images2/image-40.png) 注意 none 是不参与排版
 11. CSS 学习建议![CSS学习建议](images2/image-60.png)
+
+# 第四节课 JavaScript 编码原则（如何写好 JavaScript）
+
+## JavaScript 编码原则之【各司其责】
+
+1. 书籍推荐（很厚）：犀牛书，JavaScript 编程指南；JavaScript 高级程序设计，红宝书；JavaSCript（the good parts）语言精髓
+2. 网页深浅色浏览模式切换，实现方法?优化？
+   1. 按钮点击切换（文本和背景颜色）![按钮点击切换（文本和背景颜色）](image.png)
+   2. 统一更改样式，通过 class name 更改，transition 动画![统一更改样式，通过 class name 更改，transition动画](image-1.png)【结构-表现-行为分离】而不是通过 js 代码行为控制 css 样式
+      - 为什么这样实现了优化呢？一方面是更应该通过 css 来控制样式而不是 js 控制；另一方面是通过改变 class 或者 csstext 属性集中改变样式，提高浏览器渲染效率
+      - 参考掘金文章https://juejin.cn/post/7013187112849637407 回流和重绘相关（正好看面经的时候看到了）
+   3. 实际上，其实是要实现纯样式控制，所以更推荐直接用 css 实现【纯展示类交互寻求零 js 方案】。CSS 高级功能？伪类选择器？checkbox 的 checked 状态？兄弟节点选择器？label 设置属性 for，元素设置 id？
+3. css 和 js 都能实现的功能，更推荐用 css 实现，为什么
+   - 选择 CSS 或 JavaScript 来实现特定功能往往取决于具体的需求和上下文。然而，如果 CSS 和 JavaScript 都能实现某个功能，通常推荐使用 CSS，原因如下：
+   1. **性能：** CSS 在浏览器中通常比 JavaScript 更快，因为 CSS 由浏览器的渲染引擎直接处理，而 JavaScript 则需要通过浏览器的 JavaScript 引擎解析和执行。因此，如果一个功能可以用 CSS 实现，通常会得到更快的加载和执行时间。
+   2. **资源使用：** JavaScript 在运行时可能会消耗更多的计算机资源（如内存和 CPU）。如果一个网页上有大量的 JavaScript，这可能会使得网页在低端设备或者网络连接差的情况下运行缓慢。
+   3. **渐进增强和优雅降级：** 使用 CSS 可以实现渐进增强（progressive enhancement）和优雅降级（graceful degradation）。这意味着网站可以在所有浏览器上运行，即使某些浏览器不支持某些 CSS 特性，网站也可以退化到一个基础的功能级别。而依赖 JavaScript 的功能可能会在禁用 JavaScript 的情况下完全无法使用。
+   4. **可维护性和清晰性：** 通过使用 CSS，可以将样式和行为进行更清晰的分离，使得代码更易于维护和理解。使用 CSS 进行布局和样式定义，而将 JavaScript 留给更复杂的交互和动态内容。
+   5. 尽管如此，CSS 和 JavaScript 各有优点和用途，理想情况下，它们应该一起使用，以实现最佳的用户体验和性能。例如，某些复杂的交互或动画效果可能只能通过 JavaScript 实现。
+
+## JavaScript 编码原则之组件封装
+
+1. 好的组件要有：封装性、正确性、扩展性和复用性
+2. 原生 JS 实现电商网站轮播图？【组件化理论】
+   1. html-无序列表
+   2. css-绝对定位实现图片重叠，使用修饰符来进行图片切换，通过 transition 实现切换动画
+   3. js-行为 API（保证原子操作，指责单一），获取当前选中元素|获取当前选中元素下标|切换到|切换到上一张|切换到下一张
+   4. 自定义事件解耦，实现状态绑定
+      - 毫无印象![自定义事件](image-2.png)
+   5. 优化？不够灵活？扩展性不强？重构——插件化（毫无印象）
+      1. 将控制元素抽取成插件
+      2. 插件与组件之间通过**依赖注入**方式建立联系
+      3. 降低构造函数复杂度
+   6. 重构——模板化
+      - render 函数渲染，数据驱动页面展示
+   7. 重构——抽象化
+      - 将通用的组件模型抽象出来
+3. 过程抽象？
+   1. 用来处理局部细节控制的一些方法
+   2. 函数式编程思想的基础应用
+   3. Once：为了能够让"只执行一次"的需求覆盖不同的事件处理，我们可以将这个需求剥离出来。这个过程我们称为过程抽象。
+4. 构成抽象举例：操作次数限制
+   1. 一些异步交互
+   2. 一次性的 HTTP 请求
+5. 高阶函数
+   1. 以函数作为参数
+   2. 以函数作为返回值
+   3. 常用于作为函数装饰器
+6. 常见高阶函数
+   1. once
+   2. throttle
+   3. debounce
+   4. concumer/2
+   5. iterative
+7. 编程范式（？
+   1. 命令式
+   2. 声明式
+   3. 三态
+
+## 深入浅出 TypeScript
+
+### 为什么学 TS
+
+1. 静态类型、面向对象
+2. 强类型语言
+3. 编译时发现错误
+4. ts vs js![TypeScript vs JavaScript](image-3.png)
+5. 推荐相关![ts相关](image-4.png)
+6. 优点：类型安全|下一代 JS 特性|完善的工具链（生产力）
+
+### TS 基础
+
+1. 基础类型：boolean number string | enum | any unknown void | never | [] | tuple
+2. 函数类型：![函数的定义](image-5.png)
+3. 接口 interface （是为了定义对象类型）：![interface](image-6.png)
+4. 类![类](image-7.png)
+
+### TS 进阶
+
+1. 高级类型
+   1. 联合类型|
+   2. 交叉类型&
+   3. 类型断言
+   4. 类型别名![类型别名](image-8.png)
+2. 泛型
+3.
+
+### TS 实战
+
+## web 标准和前端开发
+
+### 起源、架构、变迁
+
+1. ![初始web只包括HTML+HTTP+URL](image-9.png)
+2. ![技术变迁](image-10.png)
+
+### 前端应用的领域
+
+1. ![领域](image-11.png)
+   1. 网站-登录-不同选项-资源-状态
+   2. 信息共享
+   3. 开发
+2. ![浏览器](image-12.png)
+3. ![服务器](image-13.png)
+4. ![终端和跨端](image-14.png)
+
+### 语言、框架、工具
+
+1. ![webAssembly](image-15.png)
+2. ![框架|工具](image-16.png)
+3. ![浏览器](image-17.png)
+   深入理解现代浏览器：https://github.com/75team/w3c/blob/master/articles/20190603_cncuckoo_%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E7%8E%B0%E4%BB%A3%E6%B5%8F%E8%A7%88%E5%99%A8.md
+4. ![网络](image-18.png)
+   an overview of HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
+
+### 前端学习路线图
+
+1. https://roadmap.sh/frontend 前端学习路线图
+
