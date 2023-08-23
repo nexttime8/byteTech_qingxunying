@@ -208,7 +208,7 @@
 1. 书籍推荐（很厚）：犀牛书，JavaScript 编程指南；JavaScript 高级程序设计，红宝书；JavaSCript（the good parts）语言精髓
 2. 网页深浅色浏览模式切换，实现方法?优化？
    1. 按钮点击切换（文本和背景颜色）![按钮点击切换（文本和背景颜色）](image.png)
-   2. 统一更改样式，通过 class name 更改，transition 动画![统一更改样式，通过 class name 更改，transition动画](image-1.png)【结构-表现-行为分离】而不是通过 js 代码行为控制 css 样式
+   2. 统一更改样式，通过 class name 更改，transition 动画![统一更改样式，通过 class name 更改，transition动画](images3/image-1.png)【结构-表现-行为分离】而不是通过 js 代码行为控制 css 样式
       - 为什么这样实现了优化呢？一方面是更应该通过 css 来控制样式而不是 js 控制；另一方面是通过改变 class 或者 csstext 属性集中改变样式，提高浏览器渲染效率
       - 参考掘金文章https://juejin.cn/post/7013187112849637407 回流和重绘相关（正好看面经的时候看到了）
    3. 实际上，其实是要实现纯样式控制，所以更推荐直接用 css 实现【纯展示类交互寻求零 js 方案】。CSS 高级功能？伪类选择器？checkbox 的 checked 状态？兄弟节点选择器？label 设置属性 for，元素设置 id？
@@ -228,7 +228,7 @@
    2. css-绝对定位实现图片重叠，使用修饰符来进行图片切换，通过 transition 实现切换动画
    3. js-行为 API（保证原子操作，指责单一），获取当前选中元素|获取当前选中元素下标|切换到|切换到上一张|切换到下一张
    4. 自定义事件解耦，实现状态绑定
-      - 毫无印象![自定义事件](image-2.png)
+      - 毫无印象![自定义事件](images3/image-2.png)
    5. 优化？不够灵活？扩展性不强？重构——插件化（毫无印象）
       1. 将控制元素抽取成插件
       2. 插件与组件之间通过**依赖注入**方式建立联系
@@ -266,16 +266,16 @@
 1. 静态类型、面向对象
 2. 强类型语言
 3. 编译时发现错误
-4. ts vs js![TypeScript vs JavaScript](image-3.png)
-5. 推荐相关![ts相关](image-4.png)
+4. ts vs js![TypeScript vs JavaScript](images3/image-3.png)
+5. 推荐相关![ts相关](images3/image-4.png)
 6. 优点：类型安全|下一代 JS 特性|完善的工具链（生产力）
 
 ### TS 基础
 
 1. 基础类型：boolean number string | enum | any unknown void | never | [] | tuple
-2. 函数类型：![函数的定义](image-5.png)
-3. 接口 interface （是为了定义对象类型）：![interface](image-6.png)
-4. 类![类](image-7.png)
+2. 函数类型：![函数的定义](images3/image-5.png)
+3. 接口 interface （是为了定义对象类型）：![interface](images3/image-6.png)
+4. 类![类](images3/image-7.png)
 
 ### TS 进阶
 
@@ -283,8 +283,8 @@
    1. 联合类型|
    2. 交叉类型&
    3. 类型断言
-   4. 类型别名![类型别名](image-8.png)
-2. 泛型![泛型定义](image-19.png)，泛型应用场景![泛型应用场景](image-20.png)
+   4. 类型别名![类型别名](images3/image-8.png)
+2. 泛型![泛型定义](images3/image-19.png)，泛型应用场景![泛型应用场景](images3/image-20.png)
 3.
 
 ### TS 实战
@@ -293,28 +293,32 @@
 
 ### 起源、架构、变迁
 
-1. ![初始web只包括HTML+HTTP+URL](image-9.png)
-2. ![技术变迁](image-10.png)
+1. ![初始web只包括HTML+HTTP+URL](images3/image-9.png)
+2. ![技术变迁](images3/image-10.png)
 
 ### 前端应用的领域
 
-1. ![领域](image-11.png)
+1. ![领域](images3/image-11.png)
    1. 网站-登录-不同选项-资源-状态
    2. 信息共享
    3. 开发
-2. ![浏览器](image-12.png)
-3. ![服务器](image-13.png)
-4. ![终端和跨端](image-14.png)
+2. ![浏览器](images3/image-12.png)
+3. ![服务器](images3/image-13.png)
+4. ![终端和跨端](images3/image-14.png)
 
 ### 语言、框架、工具
 
-1. ![webAssembly](image-15.png)
-2. ![框架|工具](image-16.png)
-3. ![浏览器](image-17.png)
+1. ![webAssembly](images3/image-15.png)
+2. ![框架|工具](images3/image-16.png)
+3. ![浏览器](images3/image-17.png)
    深入理解现代浏览器：https://github.com/75team/w3c/blob/master/articles/20190603_cncuckoo_%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E7%8E%B0%E4%BB%A3%E6%B5%8F%E8%A7%88%E5%99%A8.md
-4. ![网络](image-18.png)
+4. ![网络](images3/image-18.png)
    an overview of HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
 
 ### 前端学习路线图
 
 1. https://roadmap.sh/frontend 前端学习路线图
+
+## webpack
+
+1. 
